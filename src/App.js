@@ -142,7 +142,9 @@ export default class App extends Component {
   }
 
   takeSnap(e) {
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
     axios.get('/snapshot')
     .then((res) => {
       console.log(res);
