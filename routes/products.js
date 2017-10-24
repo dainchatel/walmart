@@ -1,6 +1,7 @@
 var models = require('../db/models/index');
 var express = require('express');
 var router = express.Router();
+var cors = require('cors');
 
 router.get('/', function(req,res,next) {
     models.Product.findAll().then(products => {
