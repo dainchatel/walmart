@@ -5,6 +5,9 @@ var cors = require('cors');
 
 router.get('/', function(req,res,next) {
     models.Product.findAll().then(products => {
+      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Methods', 'GET,PUT');
+      res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
       return res.json(products);
     })
 });
