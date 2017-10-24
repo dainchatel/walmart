@@ -157,7 +157,6 @@ export default class App extends Component {
 
   fullyLoaded() {
     if (!this.state.snapshots) {
-      this.takeSnap();
       return (
         <div className='loading'>gimme a sec</div>
       )
