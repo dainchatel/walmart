@@ -2,6 +2,20 @@ import React, { Component, PropTypes } from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import axios from 'axios';
 
+// this is the grid component
+// it gets two elements from the library, the table itself, and each column
+// initial state is editing no element, with no new name to go in
+
+//name, price, image, url, and rating formatters all just format the cell values as necessary
+// editBrand chooses the product we're editing the brand of by 
+//setting the editing state to that brand's id
+// sendBrandChange does the PUT request that will update the API
+// brandFormatter is a little more complicated than the others
+// since it can have two formats, normal brand display
+// or editing, which needs a form and a cancel button 
+// the render function calls the bootstrap table with all the tableheadercolumns
+// each has the API's attributes for filtering or sorting- it's easy to update
+// it also links to each cell's formatting function
 
 export default class Grid extends Component {
 
