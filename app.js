@@ -1,3 +1,14 @@
+
+// I hope you'll forgive my brief comments - I just spilled water on my computer 
+// So I am typing these with a phone
+// This is a fairly standard root server js file
+// The '/' route uses the index.html, which loads the react bundle
+// The '/products' and '/snapshot' routes have been extracted to the routes folder
+// Those routes have a simple GET and res headers for CORS
+// The /product route has a PUT for updating the brand as well
+// the file is initiated with 'var' instead of 'const' - i would change if i had time
+
+
 var express = require('express');
 var path = require('path');
 require('dotenv').config();
