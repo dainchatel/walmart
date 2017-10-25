@@ -5,6 +5,43 @@ import './react-styles/style.scss';
 import moment from 'moment';
 
 
+// In component did mount, getAllProducts is called
+// It does a GET request for the whole products table, then divides up the data
+// Each snapshot of 1000 is pushed as one array into the snapshots array
+// The latest snapshot is selected as current
+// The snapshot dates are formatted to be readable
+// A new brands object is created
+// This has the number of products of each brand in the current array
+// Then a top 3 array of brands is created, so that that data can be 
+//easily analyzed
+
+// renderSnapshotOptions, renderbrandOptions, and renderResults 
+//all do similar things
+// if the state exists, then they iterate over it and create a series of UI elements
+// in the first case, <option> elements, in the select checkbox <inputs> 
+// and in the third <div> elements with the % and bar charts
+
+// choose snapshot is called when the select box in top left is changed
+// it looks to the snapshots array to find the new current array
+// then it has to reset the current brands state as well
+// it also has to reset the top3 state, since this changes from snap to snap
+
+// the choose brand is called on change when a brand is checked/unchecked
+// it pushes to a state array of selectedbrands, so that brand's 
+// market share % can be rendered visually below
+
+// take snap is called when the button is pressed
+// it does a get request to the /snapshot route, 
+// which really has nothing except the custom middleware
+// that adds the current 1000 top products as another snapshot to our array
+// there's a settimeout at the end because the route doesn't need
+// to return a response, and it takes a while to do the middleware
+// there's already a route for that, so the set timeout calls the first func
+
+// fullyLoaded is the conditional rendering return 
+// it checks to see if there's any API data then 
+// it calls all the other elements
+
 export default class App extends Component {
 
   constructor() {
