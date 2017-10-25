@@ -9,6 +9,9 @@
 // the file is initiated with 'var' instead of 'const' - i would change if i had time
 
 
+// most important remaining code in src/App.js and src/components/Grid.js
+
+
 var express = require('express');
 var path = require('path');
 require('dotenv').config();
